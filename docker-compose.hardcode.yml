@@ -1,0 +1,12 @@
+web:
+  image: nginx:1.13-alpine
+  volumes:
+   - ./conf.d:/etc/nginx/conf.d
+   - ./generated-files:/usr/share/nginx/html
+  ports:
+   - "80:80"
+  environment:
+   - NGINX_PORT=80  
+   - SHA_FOLDER=sha123
+  command: /bin/sh -c "nginx -g 'daemon off;'"
+ 
