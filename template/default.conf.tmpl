@@ -1,8 +1,7 @@
 server {
     listen       80;
     server_name  localhost;
-		rewrite ^(/.*)\.html(\?.*)?$ $1$2 permanent;
-		rewrite ^/(.*)/$ /$1 permanent;
+    rewrite ^/(.+)/$ /$1 permanent;
     location / {
         root   /usr/share/nginx/html/${SHA_FOLDER};
         index  index.html index.htm;
