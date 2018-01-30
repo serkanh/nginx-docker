@@ -8,5 +8,5 @@ web:
   environment:
    - NGINX_PORT=80
    - SHA_FOLDER=sha123
-  command: /bin/sh -c "envsubst < ./template/default.conf.tmpl > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+  command: /bin/sh -c "envsubst  '$SHA_FOLDER' < ./template/default.conf.tmpl > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
  
